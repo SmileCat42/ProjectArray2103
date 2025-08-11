@@ -190,7 +190,7 @@ public class Login extends javax.swing.JFrame {
             f2.setVisible(true);     // แสดง Form2
             this.dispose(); 
         }else{
-           JOptionPane.showMessageDialog(this, "กรอกรหัสผิด กรุณากรอก\nUsername : 1234\nPassword : 1234");
+           JOptionPane.showMessageDialog(this, "กรอกรหัสผิด! กรุณากรอก\nUsername : 1234\nPassword : 1234");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
