@@ -190,31 +190,39 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+    public class Products{
+        public int code;
+        public String name;
+        public int type;
+        public float price;
+        public String pic;
+        void setAll(int a, String b, int c, float d, String e){
+            code=a;
+            name=b;
+            type=c;
+            price=d;
+            pic=e;
         }
-        //</editor-fold>
-
-        /* Create and display the form */
+        public static Products[] list=new Products[20];
+        
+        public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> new Menu().setVisible(true));
+        list[1].setAll(10233,"Adidas sneaker",1,4600,"001");
+        list[2].setAll(10472,"Nike sneaker",1,4200,"002");
+        list[3].setAll(10785,"Skecher sneaker",1,2500,"003");
+        list[4].setAll(20096,"Umbro Glove",2,800,"004");
+        list[5].setAll(20504,"Nike football shirt",2,1500,"005");
+        list[6].setAll(30319,"Ping stick golf",3,1300,"006");
+        list[7].setAll(30873,"Anyday golf bag",3,5000,"007");
+        list[8].setAll(40152,"Yonex strike",4,2400,"008");
+        list[9].setAll(40197,"Kawasaki strike",4,1700,"009");
+        list[10].setAll(40601,"Victor shuttlecock",4,200,"010");
+        list[11].setAll(50290,"Puma football",5,800,"011");
+        list[12].setAll(50475,"Mikasa volleyball",5,1200,"012");
+        list[13].setAll(50290,"Wilson basketball",5,1500,"013");
+        
     }
-
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
