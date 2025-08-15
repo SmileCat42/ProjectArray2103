@@ -4,20 +4,63 @@
  */
 package projectarray;
 
-/**
- *
- * @author Windows10
- */
-public class Menu extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Menu.class.getName());
 
-    /**
-     * Creates new form Menu
-     */
+public class Menu extends javax.swing.JFrame {
+    int n=13;
+    final int UB=15;
+    int LB=0;
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Menu.class.getName());
+    
+        public static class Products{
+        public int code;
+        public String name;
+        public int type;
+        public float price;
+        public String pic;
+
+        void setAll(int a, String b, int c, float d, String e){
+            code=a;
+            name=b;
+            type=c;
+            price=d;
+            pic=e;
+        }
+}
+        public static Products[] list=new Products[15];
+      
+                static {
+    for (int i = 0; i < list.length; i++) {
+        list[i] = new Products();
+    }
+}
+
+        
+      public static void main(String args[]) {
+
+      
+        list[0].setAll(10233,"Adidas sneaker",1,4600,"001");
+        list[1].setAll(10472,"Nike sneaker",1,4200,"002");
+        list[2].setAll(10785,"Skecher sneaker",1,2500,"003");
+        list[3].setAll(20096,"Umbro Glove",2,800,"004");
+        list[4].setAll(20504,"Nike football shirt",2,1500,"005");
+        list[5].setAll(30319,"Ping stick golf",3,1300,"006");
+        list[6].setAll(30873,"Anyday golf bag",3,5000,"007");
+        list[7].setAll(40152,"Yonex strike",4,2400,"008");
+        list[8].setAll(40197,"Kawasaki strike",4,1700,"009");
+        list[9].setAll(40601,"Victor shuttlecock",4,200,"010");
+        list[10].setAll(50290,"Puma football",5,800,"011");
+        list[11].setAll(50475,"Mikasa volleyball",5,1200,"012");
+        list[12].setAll(50290,"Wilson basketball",5,1500,"013");
+    java.awt.EventQueue.invokeLater(() -> new Menu().setVisible(true));
+}
+    
+
+
     public Menu() {
         initComponents();
     }
+ 
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,6 +102,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setText(",k,kh,hj");
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -70,24 +114,24 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 259, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(27, 27, 27))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(39, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(27, 27, 27))))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
@@ -103,8 +147,18 @@ public class Menu extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
 
         jButton4.setText("Sneaker");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Soccer");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Golf");
 
@@ -128,13 +182,13 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -172,16 +226,16 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton4)
-                                .addGap(32, 32, 32)
-                                .addComponent(jButton5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton6)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton7)
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton8)
-                                .addGap(35, 35, 35)))))
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jButton9)
                 .addGap(30, 30, 30))
@@ -190,39 +244,28 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public class Products{
-        public int code;
-        public String name;
-        public int type;
-        public float price;
-        public String pic;
-        void setAll(int a, String b, int c, float d, String e){
-            code=a;
-            name=b;
-            type=c;
-            price=d;
-            pic=e;
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int i=LB;
+        jTextArea1.setText("Product code : "+list[i].code+
+                "\nName : "+list[i].name+
+                "\nType : "+list[i].type+ 
+                "\nPrice : "+list[i].price+" baht");
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        int i;
+        for(i=LB;i<n;i++){
+            if(list[i].type==2){
+                break;
+            }
         }
-        public static Products[] list=new Products[20];
-        
-        public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(() -> new Menu().setVisible(true));
-        list[1].setAll(10233,"Adidas sneaker",1,4600,"001");
-        list[2].setAll(10472,"Nike sneaker",1,4200,"002");
-        list[3].setAll(10785,"Skecher sneaker",1,2500,"003");
-        list[4].setAll(20096,"Umbro Glove",2,800,"004");
-        list[5].setAll(20504,"Nike football shirt",2,1500,"005");
-        list[6].setAll(30319,"Ping stick golf",3,1300,"006");
-        list[7].setAll(30873,"Anyday golf bag",3,5000,"007");
-        list[8].setAll(40152,"Yonex strike",4,2400,"008");
-        list[9].setAll(40197,"Kawasaki strike",4,1700,"009");
-        list[10].setAll(40601,"Victor shuttlecock",4,200,"010");
-        list[11].setAll(50290,"Puma football",5,800,"011");
-        list[12].setAll(50475,"Mikasa volleyball",5,1200,"012");
-        list[13].setAll(50290,"Wilson basketball",5,1500,"013");
-        
-    }
-    }
+        jTextArea1.setText("Product code : "+list[i].code+
+                "\nName : "+list[i].name+
+                "\nType : "+list[i].type+ 
+                "\nPrice : "+list[i].price+" baht");
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
