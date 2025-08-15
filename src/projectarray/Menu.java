@@ -9,6 +9,7 @@ public class Menu extends javax.swing.JFrame {
     int n=13;
     final int UB=15;
     int LB=0;
+    int current=LB;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Menu.class.getName());
     
         public static class Products{
@@ -95,8 +96,18 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INFO", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(255, 0, 51))); // NOI18N
 
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Next");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 204));
         jLabel1.setText(",k,kh,hj");
@@ -161,10 +172,25 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton6.setText("Golf");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Racket");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Ball");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("Log out");
 
@@ -245,25 +271,84 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        int i=LB;
-        jTextArea1.setText("Product code : "+list[i].code+
-                "\nName : "+list[i].name+
-                "\nType : "+list[i].type+ 
-                "\nPrice : "+list[i].price+" baht");
+        current=LB;
+        jTextArea1.setText("Product code : "+list[current].code+
+                "\nName : "+list[current].name+
+                "\nType : "+list[current].type+ 
+                "\nPrice : "+list[current].price+" baht");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         int i;
         for(i=LB;i<n;i++){
             if(list[i].type==2){
+                current=i;
                 break;
             }
         }
-        jTextArea1.setText("Product code : "+list[i].code+
-                "\nName : "+list[i].name+
-                "\nType : "+list[i].type+ 
-                "\nPrice : "+list[i].price+" baht");
+        jTextArea1.setText("Product code : "+list[current].code+
+                "\nName : "+list[current].name+
+                "\nType : "+list[current].type+ 
+                "\nPrice : "+list[current].price+" baht");
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        int i;
+        for(i=LB;i<n;i++){
+            if(list[i].type==3){
+                current=i;
+                break;
+            }
+        }
+        jTextArea1.setText("Product code : "+list[current].code+
+                "\nName : "+list[current].name+
+                "\nType : "+list[current].type+ 
+                "\nPrice : "+list[current].price+" baht");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+int i;
+        for(i=LB;i<n;i++){
+            if(list[i].type==4){
+                current=i;
+                break;
+            }
+        }
+        jTextArea1.setText("Product code : "+list[current].code+
+                "\nName : "+list[current].name+
+                "\nType : "+list[current].type+ 
+                "\nPrice : "+list[current].price+" baht");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+int i;
+        for(i=LB;i<n;i++){
+            if(list[i].type==5){
+                current=i;
+                break;
+            }
+        }
+        jTextArea1.setText("Product code : "+list[current].code+
+                "\nName : "+list[current].name+
+                "\nType : "+list[current].type+ 
+                "\nPrice : "+list[current].price+" baht");
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        current++;
+        jTextArea1.setText("Product code : "+list[current].code+
+                "\nName : "+list[current].name+
+                "\nType : "+list[current].type+ 
+                "\nPrice : "+list[current].price+" baht");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        current--;
+        jTextArea1.setText("Product code : "+list[current].code+
+                "\nName : "+list[current].name+
+                "\nType : "+list[current].type+ 
+                "\nPrice : "+list[current].price+" baht");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
