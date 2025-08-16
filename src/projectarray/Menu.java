@@ -132,10 +132,10 @@ public Menu() {
         });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel1.setText(",k,kh,hj");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
 
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -161,9 +161,9 @@ public Menu() {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -407,7 +407,10 @@ public Menu() {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         current=LB;
-        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        
+        jTextArea1.setText("                  Detail"+
+                "\nProduct code : "+DataStore.list[current].code+
                 "\nName : "+DataStore.list[current].name+
                 "\nType : "+DataStore.list[current].type+ 
                 "\nPrice : "+DataStore.list[current].price+" baht");
@@ -421,7 +424,9 @@ public Menu() {
                 break;
             }
         }
-        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        jTextArea1.setText("                  Detail"+
+                "\nProduct code : "+DataStore.list[current].code+
                 "\nName : "+DataStore.list[current].name+
                 "\nType : "+DataStore.list[current].type+ 
                 "\nPrice : "+DataStore.list[current].price+" baht");
@@ -435,7 +440,9 @@ public Menu() {
                 break;
             }
         }
-        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        jTextArea1.setText("                  Detail"+
+                "\nProduct code : "+DataStore.list[current].code+
                 "\nName : "+DataStore.list[current].name+
                 "\nType : "+DataStore.list[current].type+ 
                 "\nPrice : "+DataStore.list[current].price+" baht");
@@ -449,7 +456,9 @@ int i;
                 break;
             }
         }
-        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        jTextArea1.setText("                  Detail"+
+                "\nProduct code : "+DataStore.list[current].code+
                 "\nName : "+DataStore.list[current].name+
                 "\nType : "+DataStore.list[current].type+ 
                 "\nPrice : "+DataStore.list[current].price+" baht");
@@ -463,7 +472,9 @@ int i;
                 break;
             }
         }
-        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        jTextArea1.setText("                  Detail"+
+                "\nProduct code : "+DataStore.list[current].code+
                 "\nName : "+DataStore.list[current].name+
                 "\nType : "+DataStore.list[current].type+ 
                 "\nPrice : "+DataStore.list[current].price+" baht");
@@ -473,12 +484,13 @@ int i;
      
         if(current<(UB-1)){
             current++;
-            
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
         }else{
             JOptionPane.showMessageDialog(this, "Overflow!");
             System.out.println("Overflow");
         }
-        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+        jTextArea1.setText("                  Detail"+
+                "\nProduct code : "+DataStore.list[current].code+
                 "\nName : "+DataStore.list[current].name+
                 "\nType : "+DataStore.list[current].type+ 
                 "\nPrice : "+DataStore.list[current].price+" baht");
@@ -488,12 +500,13 @@ int i;
         
         if(current>LB){
             current--;
-            
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
         }else{
             JOptionPane.showMessageDialog(this, "Underflow!");
             System.out.println("Underflow");
         }
-        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+        jTextArea1.setText("                  Detail"+
+                "\nProduct code : "+DataStore.list[current].code+
                 "\nName : "+DataStore.list[current].name+
                 "\nType : "+DataStore.list[current].type+ 
                 "\nPrice : "+DataStore.list[current].price+" baht");
