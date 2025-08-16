@@ -19,46 +19,12 @@ public class Menu extends javax.swing.JFrame {
     int current=LB;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Menu.class.getName());
     
-        public static class Products{
-        public int code;
-        public String name;
-        public int type;
-        public float price;
-        public String pic;
+        
 
-        void setAll(int a, String b, int c, float d, String e){
-            code=a;
-            name=b;
-            type=c;
-            price=d;
-            pic=e;
-        }
-}
-        public static Products[] list=new Products[15];
-      
-                static {
-    for (int i = 0; i < list.length; i++) {
-        list[i] = new Products();
-    }
-}
 
         
       public static void main(String args[]) {
-
-      
-        list[0].setAll(10233,"Adidas sneaker",1,4600,"001");
-        list[1].setAll(10472,"Nike sneaker",1,4200,"002");
-        list[2].setAll(10785,"Skecher sneaker",1,2500,"003");
-        list[3].setAll(20096,"Umbro Glove",2,800,"004");
-        list[4].setAll(20504,"Nike football shirt",2,1500,"005");
-        list[5].setAll(30319,"Ping stick golf",3,1300,"006");
-        list[6].setAll(30873,"Anyday golf bag",3,5000,"007");
-        list[7].setAll(40152,"Yonex strike",4,2400,"008");
-        list[8].setAll(40197,"Kawasaki strike",4,1700,"009");
-        list[9].setAll(40601,"Victor shuttlecock",4,200,"010");
-        list[10].setAll(50290,"Puma football",5,800,"011");
-        list[11].setAll(50475,"Mikasa volleyball",5,1200,"012");
-        list[12].setAll(50290,"Wilson basketball",5,1500,"013");
+        
     java.awt.EventQueue.invokeLater(() -> new Menu().setVisible(true));
         
 }
@@ -99,7 +65,6 @@ public Menu() {
     setBorder(BorderFactory.createLineBorder(new Color(200,200,200), 2));
 }};
     for (java.awt.event.MouseListener ml : jButton9.getMouseListeners()) {
-    jButton9.removeMouseListener(ml);
     jButton9.setBorderPainted(false);
     jButton9.setContentAreaFilled(false);
     jButton9.setFocusPainted(false);
@@ -203,6 +168,11 @@ public Menu() {
         );
 
         jButton3.setText("My order");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("jLabel2");
 
@@ -413,66 +383,66 @@ public Menu() {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         current=LB;
-        jTextArea1.setText("Product code : "+list[current].code+
-                "\nName : "+list[current].name+
-                "\nType : "+list[current].type+ 
-                "\nPrice : "+list[current].price+" baht");
+        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+                "\nName : "+DataStore.list[current].name+
+                "\nType : "+DataStore.list[current].type+ 
+                "\nPrice : "+DataStore.list[current].price+" baht");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         int i;
         for(i=LB;i<n;i++){
-            if(list[i].type==2){
+            if(DataStore.list[i].type==2){
                 current=i;
                 break;
             }
         }
-        jTextArea1.setText("Product code : "+list[current].code+
-                "\nName : "+list[current].name+
-                "\nType : "+list[current].type+ 
-                "\nPrice : "+list[current].price+" baht");
+        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+                "\nName : "+DataStore.list[current].name+
+                "\nType : "+DataStore.list[current].type+ 
+                "\nPrice : "+DataStore.list[current].price+" baht");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         int i;
         for(i=LB;i<n;i++){
-            if(list[i].type==3){
+            if(DataStore.list[i].type==3){
                 current=i;
                 break;
             }
         }
-        jTextArea1.setText("Product code : "+list[current].code+
-                "\nName : "+list[current].name+
-                "\nType : "+list[current].type+ 
-                "\nPrice : "+list[current].price+" baht");
+        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+                "\nName : "+DataStore.list[current].name+
+                "\nType : "+DataStore.list[current].type+ 
+                "\nPrice : "+DataStore.list[current].price+" baht");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 int i;
         for(i=LB;i<n;i++){
-            if(list[i].type==4){
+            if(DataStore.list[i].type==4){
                 current=i;
                 break;
             }
         }
-        jTextArea1.setText("Product code : "+list[current].code+
-                "\nName : "+list[current].name+
-                "\nType : "+list[current].type+ 
-                "\nPrice : "+list[current].price+" baht");
+        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+                "\nName : "+DataStore.list[current].name+
+                "\nType : "+DataStore.list[current].type+ 
+                "\nPrice : "+DataStore.list[current].price+" baht");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 int i;
         for(i=LB;i<n;i++){
-            if(list[i].type==5){
+            if(DataStore.list[i].type==5){
                 current=i;
                 break;
             }
         }
-        jTextArea1.setText("Product code : "+list[current].code+
-                "\nName : "+list[current].name+
-                "\nType : "+list[current].type+ 
-                "\nPrice : "+list[current].price+" baht");
+        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+                "\nName : "+DataStore.list[current].name+
+                "\nType : "+DataStore.list[current].type+ 
+                "\nPrice : "+DataStore.list[current].price+" baht");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -484,10 +454,10 @@ int i;
             JOptionPane.showMessageDialog(this, "Overflow!");
             System.out.println("Overflow");
         }
-        jTextArea1.setText("Product code : "+list[current].code+
-                "\nName : "+list[current].name+
-                "\nType : "+list[current].type+ 
-                "\nPrice : "+list[current].price+" baht");
+        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+                "\nName : "+DataStore.list[current].name+
+                "\nType : "+DataStore.list[current].type+ 
+                "\nPrice : "+DataStore.list[current].price+" baht");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -499,10 +469,10 @@ int i;
             JOptionPane.showMessageDialog(this, "Underflow!");
             System.out.println("Underflow");
         }
-        jTextArea1.setText("Product code : "+list[current].code+
-                "\nName : "+list[current].name+
-                "\nType : "+list[current].type+ 
-                "\nPrice : "+list[current].price+" baht");
+        jTextArea1.setText("Product code : "+DataStore.list[current].code+
+                "\nName : "+DataStore.list[current].name+
+                "\nType : "+DataStore.list[current].type+ 
+                "\nPrice : "+DataStore.list[current].price+" baht");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -510,6 +480,12 @@ int i;
         f3.setVisible(true);     // แสดง Form2
         this.dispose(); 
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Login f3 = new Login();  // สร้างหน้าฟอร์มใหม่
+        f3.setVisible(true);     // แสดง Form2
+        this.dispose(); 
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

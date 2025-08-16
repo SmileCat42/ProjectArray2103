@@ -195,7 +195,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         UIManager.put("OptionPane.messageFont", new Font("Tahoma", Font.PLAIN, 16));
+        UIManager.put("OptionPane.messageFont", new Font("Tahoma", Font.PLAIN, 16));
         UIManager.put("OptionPane.buttonFont", new Font("Tahoma", Font.PLAIN, 14));
         JOptionPane.showMessageDialog(this, "ขออภัยค่ะ ยังเป็นนิวบี้อยู่ รบกวนท่านกรอก\nUsername : 1234\nPassword : 1234\n ขอบคุณค่ะ");
     }//GEN-LAST:event_jButton2ActionPerformed
