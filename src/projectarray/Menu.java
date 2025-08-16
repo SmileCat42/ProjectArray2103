@@ -16,7 +16,7 @@ public class Menu extends javax.swing.JFrame {
     int n=13;
     final int UB=15;
     int LB=0;
-    int current=LB;
+    int current=-1;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Menu.class.getName());
     
         
@@ -482,9 +482,13 @@ int i;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
      
-        if(current<(UB-1)){
+        if(current<(n-1)){
             current++;
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
+        }else if(current<(UB-1)){
+                current++;
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/home.png")));
+        
         }else{
             JOptionPane.showMessageDialog(this, "Overflow!");
             System.out.println("Overflow");
@@ -498,10 +502,14 @@ int i;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(current>LB){
+        if(current>n){
+            current--;
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/home.png")));
+        }else if(current>LB){
             current--;
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
-        }else{
+        }
+        else{
             JOptionPane.showMessageDialog(this, "Underflow!");
             System.out.println("Underflow");
         }
