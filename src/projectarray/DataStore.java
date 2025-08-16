@@ -9,6 +9,7 @@ package projectarray;
  * @author Windows10
  */
 public class DataStore {
+    public static int n=13;
     public static class Products {
         public int code;
         public String name;
