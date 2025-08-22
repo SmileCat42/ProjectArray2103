@@ -13,7 +13,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JTextArea;
 
 public class Menu extends javax.swing.JFrame {
-    int n=13;
     final int UB=15;
     int LB=0;
     int current=-1;
@@ -496,7 +495,7 @@ public Menu() {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         int i;
-        for(i=LB;i<n;i++){
+        for(i=LB;i<DataStore.n;i++){
             if(DataStore.list[i].type==2){
                 current=i;
                 break;
@@ -513,7 +512,7 @@ public Menu() {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         int i;
-        for(i=LB;i<n;i++){
+        for(i=LB;i<DataStore.n;i++){
             if(DataStore.list[i].type==3){
                 current=i;
                 break;
@@ -530,7 +529,7 @@ public Menu() {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 int i;
-        for(i=LB;i<n;i++){
+        for(i=LB;i<DataStore.n;i++){
             if(DataStore.list[i].type==4){
                 current=i;
                 break;
@@ -547,7 +546,7 @@ int i;
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 int i;
-        for(i=LB;i<n;i++){
+        for(i=LB;i<DataStore.n;i++){
             if(DataStore.list[i].type==5){
                 current=i;
                 break;
@@ -564,7 +563,7 @@ int i;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
      
-        if(current<(n-1)){
+        if(current<(DataStore.n-1)){
             current++;
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource(DataStore.list[current].pic)));
         }else if(current<(UB-1)){
@@ -585,7 +584,7 @@ int i;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(current>n){
+        if(current>DataStore.n){
             current--;
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/home.png")));
         }else if(current>LB){
@@ -611,7 +610,7 @@ int i;
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Login f3 = new Login();  // สร้างหน้าฟอร์มใหม่
+        Manage f3 = new Manage();  // สร้างหน้าฟอร์มใหม่
         f3.setVisible(true);     // แสดง Form2
         this.dispose(); 
     }//GEN-LAST:event_jButton3ActionPerformed

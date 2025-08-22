@@ -10,6 +10,8 @@ package projectarray;
  */
 public class DataStore {
     public static int n=13;
+    final int UB=15;
+    int LB=0;
     public static class Products {
         public int code;
         public String name;
@@ -27,8 +29,9 @@ public class DataStore {
         static int getN(){
             return n;
         }
+        
     }
-
+    
     public static Products[] list = new Products[15];
 
     static {
