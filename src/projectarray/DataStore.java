@@ -24,6 +24,9 @@ public class DataStore {
             price = d;
             pic = e;
         }
+        static int getN(){
+            return n;
+        }
     }
 
     public static Products[] list = new Products[15];
