@@ -52,6 +52,6 @@ public class DataStore {
         list[9].setAll(40601,"Victor shuttlecock",4,200,"/sc/shuttle.jpg");
         list[10].setAll(50290,"Puma football",5,800,"/sc/puma.jpg");
         list[11].setAll(50475,"Mikasa volleyball",5,1200,"/sc/volley.jpg");
-        list[12].setAll(50290,"Wilson basketball",5,1500,"/sc/wilson.jpg");
+        list[12].setAll(50778,"Wilson basketball",5,1500,"/sc/wilson.jpg");
     }
 }
