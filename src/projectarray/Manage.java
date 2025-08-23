@@ -410,14 +410,14 @@ try {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/searchData (1).png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/searchData2 (2).png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/showall (1).png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/showall2 (1).png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -457,8 +457,8 @@ try {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18))
-                        .addGap(27, 27, 27)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
@@ -578,7 +578,7 @@ try {
         jLabel13.setText("Name : "+DataStore.list[index].name);
         jLabel14.setText("Price : "+DataStore.list[index].price);
         jLabel15.setText("Type : "+DataStore.list[index].type);
-        for(int i=index;i<DataStore.n;i++){
+        for(int i=index;i<(DataStore.n-1);i++){
                 DataStore.list[i]=DataStore.list[i+1];
         }
         DataStore.list[DataStore.n-1]=null;
