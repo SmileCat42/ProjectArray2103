@@ -31,13 +31,20 @@ public class Manage extends javax.swing.JFrame {
             });
         }
     }
-    public int SearchData(int run){
-        for(int i=0;i<DataStore.n;i++){
-            if(run==DataStore.list[i].code){
-                return i;
+    public int SearchData(int ITEM){
+        int LOC=-1;
+        int I=0;
+        while(I<DataStore.n){
+            if(ITEM==DataStore.list[I].code){
+                LOC=I;
+                System.out.println("Found at index : "+I);
+                return LOC;
+            }else{
+                I++;
             }
         }
-        return -1;
+        System.out.println("Not found");
+        return LOC;
     }
     public Manage() {
         initComponents();
@@ -440,6 +447,13 @@ try {
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("search code :");
 
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sc/sort2 (1).png"))); // NOI18N
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -595,7 +609,6 @@ try {
         int index=SearchData(SearchCode);
         if(index<0){
             JOptionPane.showMessageDialog(this, "not found!");
-            System.out.println("Status : search not found!");
             return;
         }
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -615,6 +628,25 @@ try {
         loadTableData();
         System.out.println("Status : show data on table");
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        int PTR;
+        for(int K=0;K<(DataStore.n-1);K++){
+            PTR=0;
+            while(PTR<(DataStore.n-1)-K){
+                if(DataStore.list[PTR].code>DataStore.list[PTR+1].code){
+                    DataStore.Products temp = new DataStore.Products();
+                    temp=DataStore.list[PTR];
+                    DataStore.list[PTR]=DataStore.list[PTR+1];
+                    DataStore.list[PTR+1]=temp;
+                    
+                }
+                PTR++;
+            }   
+        }
+        System.out.println("Status : data sorted");
+        loadTableData();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
